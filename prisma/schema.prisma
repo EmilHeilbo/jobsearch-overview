@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int              @id @default(autoincrement())
+  name String
+  email String
+  location String
+  applications Job_Application[]
+}
+
+model Job_Application {
+  id Int              @id @default(autoincrement())
+  title String
+  company String
+  location String
+  isHybrid Boolean    @default(false)
+  distance Decimal?
+  dateSent DateTime
+  isRejected Boolean  @default(false)
+  interviews Int      @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  sender User         @relation(fields: [senderId], references: [id])
+  senderId Int
+}
