@@ -1,0 +1,19 @@
+{
+  "name": "Bun + Svelte",
+  "dockerFile": "Dockerfile",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg/,target=/root/.gnupg/,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached"
+  ],
+  "appPort": 5173,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oven.bun-vscode",
+        "svelte.svelte-vscode",
+        "formulahendry.auto-rename-tag",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
