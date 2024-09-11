@@ -1,6 +1,9 @@
-<script>
-	let testVar = "Dynamic option";
-	let testArr = ["Array", "Options", "Here"];
+<script lang="ts">
+	import Job from '$lib/components/Job.svelte'
+	import type { PageData } from './$types'
+	let testVar = "Dynamic option"
+	let testArr = ["Array", "Options", "Here"]
+	export let data: PageData
 </script>
 
 <header>
@@ -8,7 +11,9 @@
 </header>
 
 <main>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+	{#each data.jobs as job}
+		<Job {job} />
+	{/each}
 </main>
 
 <aside>
@@ -29,7 +34,7 @@
 </aside>
 
 <footer>
-	<p>&copy;2024 – Emil Heilbo</p>
+	<p>&copy;2024 – {data.users[0].name}</p>
 	<small>
 		Made with <a href="https://kit.svelte.dev">SvelteKit</a>, <a href="https://prisma.io">Prisma</a> & <a href="https://matcha.mizu.sh">matcha.css</a>
 	</small>
