@@ -15,10 +15,10 @@ model User {
   name String
   email String
   location String
-  applications Job_Application[]
+  jobs Job[]
 }
 
-model Job_Application {
+model Job {
   id Int              @id @default(autoincrement())
   title String
   company String
@@ -30,6 +30,6 @@ model Job_Application {
   interviews Int      @default(0)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  sender User         @relation(fields: [senderId], references: [id])
-  senderId Int
+  applicant User      @relation(fields: [applicantId], references: [id])
+  applicantId Int @map("senderId")
 }
