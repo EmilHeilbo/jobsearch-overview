@@ -1,5 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from 'svelte-adapter-bun';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { configDotenv } from 'dotenv';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,5 +15,7 @@ const config = {
 		adapter: adapter()
 	}
 };
+
+configDotenv()
 
 export default config;
