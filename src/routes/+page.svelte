@@ -7,14 +7,8 @@
 </script>
 
 <header>
-	<h1>Welcome to SvelteKit</h1>
+	<h1>💼 Jobsearch Overview</h1>
 </header>
-
-<main>
-	{#each data.jobs as job}
-		<Job {job} />
-	{/each}
-</main>
 
 <aside>
 	<section>
@@ -33,6 +27,12 @@
 	</section>
 </aside>
 
+<main style="padding: 1rem;">
+	{#each data.jobs as job}
+		<Job {job} />
+	{/each}
+</main>
+
 <footer>
 	<p>&copy;2024 – {data.users[0].name}</p>
 	<small>
@@ -40,9 +40,14 @@
 	</small>
 </footer>
 
-
 <style>
 	a {
 		color: #8ff0a4;
+	}
+	footer {
+		padding: 0;
+	}
+	aside {
+		padding-left: 1rem !important;
 	}
 </style>
