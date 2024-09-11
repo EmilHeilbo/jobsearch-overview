@@ -16,6 +16,7 @@ dist-ssr
 bun.lockb
 *.db*
 **/seed.ts
+build
 
 # Editor directories and files
 .vscode/*
