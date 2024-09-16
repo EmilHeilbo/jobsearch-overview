@@ -1,4 +1,4 @@
-FROM oven/bun:alpine
+FROM oven/bun:1.0.18-alpine
 WORKDIR /usr/src/app
 
 COPY package*.json .
