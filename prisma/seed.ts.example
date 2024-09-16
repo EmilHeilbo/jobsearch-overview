@@ -1,0 +1,39 @@
+// prisma/seed.ts
+
+import { PrismaClient } from '@prisma/client'
+import { configDotenv } from 'dotenv'
+
+const prisma = new PrismaClient()
+
+async function main() {
+	configDotenv()
+  console.log(`Start seeding ...`)
+	const user = await prisma.user.create({
+		data: {
+			name: "John Doe",
+			email: "johndoe@example.com",
+			location: "Gadevej 1, 9850 Hirtshals",
+			jobs: {
+				create: {
+					title: "Bean Assessment Officer",
+					company: "NetBeans A/S",
+					location: "Gadevej 2, 9850 Hirtshals",
+					isHybrid: true,
+					dateSent: new Date()
+				},
+			},
+		}
+	})
+	console.log(`Created user ${user.name} with id: ${user.id}`)
+  console.log(`Seeding finished.`)
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })
