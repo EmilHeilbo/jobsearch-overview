@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-ignore
   import type { PageData } from "./$types";
 
   export let job: PageData;
