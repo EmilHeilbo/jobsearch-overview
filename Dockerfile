@@ -1,12 +1,12 @@
-FROM oven/bun:1.0.18-alpine
-WORKDIR /usr/src/app
+FROM oven/bun:slim
+WORKDIR /app
 
-COPY package*.json .
-RUN bun install --force
+COPY ./package.json ./bun.lockb .
+RUN bun install --no-cache --frozen-lockfile --verbose
 
 COPY . .
 RUN bunx prisma generate
 RUN bun run build
 
 EXPOSE 3000
-CMD [ "bun", "run", "./build/index.js" ]
+ENTRYPOINT [ "bun", "run", "./build/index.js" ]
