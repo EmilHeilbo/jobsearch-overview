@@ -1,29 +1,22 @@
 <script lang="ts">
 	import Job from '$lib/components/Job.svelte'
 	import type { PageData } from './$types'
-	let testVar = "Dynamic option"
-	let testArr = ["Array", "Options", "Here"]
+	let dialog: { showModal: () => any; }
 	export let data: PageData
 </script>
 
-<header>
-	<h1>💼 Jobsearch Overview</h1>
-</header>
-
-<aside>
+<aside style="margin-left: 1rem;">
 	<section>
 		<h1>This is in the sidebar</h1>
 		<label>
-			Big label
-			<small>Small label</small>
+		  🧑‍💻 Job Applicant
 			<select>
-				<option>Static option</option>
-				<option>{testVar}</option>
-				{#each testArr as _}
-					<option>{_}</option>
+				{#each data.users as _}
+					<option>{_.name}</option>
 				{/each}
 			</select>
 		</label>
+		<button class="variant" on:click={dialog.showModal()}>Add Job</button>
 	</section>
 </aside>
 
@@ -32,22 +25,3 @@
 		<Job {job} />
 	{/each}
 </main>
-
-<footer>
-	<p>&copy;2024 – {data.users[0].name}</p>
-	<small>
-		Made with <a href="https://kit.svelte.dev">SvelteKit</a>, <a href="https://prisma.io">Prisma</a> & <a href="https://matcha.mizu.sh">matcha.css</a>
-	</small>
-</footer>
-
-<style>
-	a {
-		color: #8ff0a4;
-	}
-	footer {
-		padding: 0;
-	}
-	aside {
-		padding-left: 1rem !important;
-	}
-</style>

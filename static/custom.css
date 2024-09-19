@@ -1,0 +1,27 @@
+a {
+	color: #8ff0a4;
+}
+footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	padding: 0!important;
+}
+footer :first-child {
+	padding-left: 0.5rem;
+	margin: 0;
+}
+.badges {
+	padding: 0.25rem;
+	margin: 0;
+}
+.badges img {
+	float: left;
+	margin: auto 0.2rem;
+	padding: 0.5rem 0;
+	height: 1.5rem;
+}
+.badges :last-child {
+	height: 2.5rem;
+	padding: 0;
+}
