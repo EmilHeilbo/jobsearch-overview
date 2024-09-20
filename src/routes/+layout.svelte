@@ -16,7 +16,9 @@
 	</small>
 	<p>&copy; 2024 – Emil Heilbo</p>
 	<div class="badges">
-		<img src="./cc.svg" alt="CC"><img src="./by.svg" alt="BY"><img src="./sa.svg" alt="SA">
-		<img src="By-Human-dark.svg" alt="Developed by human, not by AI">
+		<img src="./cc.svg" alt="CC">
+		<img src="./by.svg" alt="BY">
+		<img src="./sa.svg" alt="SA">
+		<img src="By-Human-light.svg" alt="Developed by human, not by AI">
 	</div>
 </footer>

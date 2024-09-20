@@ -5,7 +5,7 @@
 	export let data: PageData
 </script>
 
-<aside style="margin-left: 1rem;">
+<aside>
 	<section>
 		<h1>This is in the sidebar</h1>
 		<label>
@@ -20,7 +20,7 @@
 	</section>
 </aside>
 
-<main style="padding: 1rem;">
+<main>
 	{#each data.jobs as job}
 		<Job {job} />
 	{/each}
