@@ -25,6 +25,7 @@ model Job {
   location String
   isHybrid Boolean    @default(false)
   distance Decimal?
+  travelTime Decimal?
   dateSent DateTime
   isRejected Boolean  @default(false)
   interviews Int      @default(0)
