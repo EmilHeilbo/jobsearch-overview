@@ -19,7 +19,7 @@ export async function getCoordinates(address: string) {
 }
 
 export async function getRoute(coordinates: {lat: number, lon: number, hint: string}[]) {
-	if (typeof process.env.GHOP_API_KEY == "undefined") {
+	if (!process.env.GHOP_API_KEY) {
 		throw "Define your GraphHopper API key in your '.env' file"
 	}
 	const PARAMS = new URLSearchParams({key: process.env.GHOP_API_KEY!}).toString()

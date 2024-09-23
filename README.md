@@ -23,11 +23,11 @@ Remember to configure your SQLite connection string in your local `.env` file.
 
 ### If you don't have an existing database file
 
-1. Ensure `./prisma/seed.ts` exists and is configured correctly.
+1. Ensure `prisma/seed.ts` exists and is configured correctly.
 
-2. `bunx tsc -m nodenext seed.ts`
+2. `bunx prisma db push` – This generates an empty database with the defined schema
 
-3. `bunx prisma db seed` – Now you should have a seeded .db file
+3. `bun prisma db seed` – This applies the seed data to your database
 
 ### Build & Run Container
 
