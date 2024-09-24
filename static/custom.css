@@ -31,3 +31,10 @@ footer small:first-child {
 	height: 2rem;
 	padding: 0.25rem 0;
 }
+#jobs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.job :first-child {
+	margin-top: 0!important;
+}

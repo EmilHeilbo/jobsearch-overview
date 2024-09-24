@@ -8,8 +8,7 @@
 <aside>
 	<section>
 		<h1>This is in the sidebar</h1>
-		<label>
-		  🧑‍💻 Job Applicant
+		<label>🧑‍💻 Job Applicant
 			<select>
 				{#each data.users as _}
 					<option>{_.name}</option>
@@ -21,7 +20,9 @@
 </aside>
 
 <main>
+	<div id='jobs'>
 	{#each data.jobs as job}
 		<Job {job} />
 	{/each}
+	</div>
 </main>
