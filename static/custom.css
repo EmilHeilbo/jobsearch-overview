@@ -38,3 +38,6 @@ footer small:first-child {
 .job :first-child {
 	margin-top: 0!important;
 }
+button img {
+	height: 0.875rem;
+}
