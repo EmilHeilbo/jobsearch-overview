@@ -5,13 +5,8 @@
   export let job: PageData;
 
   function pluralize(count: number, word: string) {
-    if (count == 0) {
-      return null
-    } else if (count <= 1 && count >= -1) {
-      return `${count} ${word}`
-    } else {
-      return `${count} ${word}s`
-    }
+		if (count == 0) return null;
+		return `${count} ${(count > 1) ? word : `${word}s`}`;
   }
 
   const oneDay = 24 * 60 * 60 * 1000;
@@ -28,8 +23,10 @@
   <small>🧑‍💻{job.applicant?.name ?? "Unknown"}</small>
   <p>🏢{job.company}</p>
   <small>
-    📤{daysPassedText}
-    {job.distance ? `🚗${job.distance} km` : 'N/A'}
-    {job.travelTime ? `⏱️${job.travelTime} minutes` : 'N/A'}
+		📤 {daysPassedText} |
+		{job.distance ? `🚗 ${job.distance} km` : 'N/A'} |
+		{job.travelTime
+			? `⏱️ ${pluralize(job.travelTime, 'minute')}  |  ${((job.travelTime * (job.isHybrid ? 3 : 5) * 2) / 60).toFixed(1)} hours/week`
+			: 'N/A'}
   </small>
 </article>
