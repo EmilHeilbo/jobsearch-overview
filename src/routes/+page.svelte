@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Job from '$lib/components/Job.svelte'
-	import type { PageData } from './$types'
-	let dialog: { showModal: () => any; }
-	export let data: PageData
+	import Job from '$lib/components/Job.svelte';
+	import type { PageData } from './$types';
+	let dialog: { showModal: () => any };
+	export let data: PageData;
 </script>
 
 <aside>
@@ -10,8 +10,9 @@
 		<h1>This is in the sidebar</h1>
 		<label>🧑‍💻 Job Applicant
 			<select>
+			<select id="userSelect">
 				{#each data.users as _}
-					<option>{_.name}</option>
+					<option value={_.id}>{_.name}</option>
 				{/each}
 			</select>
 		</label>
@@ -20,7 +21,7 @@
 </aside>
 
 <main>
-	<div id='jobs'>
+	<div id="jobs">
 	{#each data.jobs as job}
 		<Job {job} />
 	{/each}
