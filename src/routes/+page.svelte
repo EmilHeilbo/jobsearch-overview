@@ -1,10 +1,13 @@
 <script lang="ts">
 	import Job from '$lib/components/Job.svelte';
+	import AddJob from '$lib/components/AddJob.svelte';
 	import LinkButton from '$lib/components/LinkButton.svelte';
 	import type { PageData } from './$types';
 	let dialog: { showModal: () => any };
 	export let data: PageData;
 </script>
+
+<AddJob bind:dialog />
 
 <aside>
 	<section>
@@ -26,8 +29,8 @@
 
 <main>
 	<div id="jobs">
-	{#each data.jobs as job}
-		<Job {job} />
-	{/each}
+		{#each data.jobs as job}
+			<Job {job} />
+		{/each}
 	</div>
 </main>

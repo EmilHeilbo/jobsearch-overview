@@ -38,6 +38,11 @@ footer small:first-child {
 .job :first-child {
 	margin-top: 0!important;
 }
+.addJob form:first-of-type {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 1rem;
+}
 button img {
 	height: 0.875rem;
 }
