@@ -8,8 +8,7 @@
 <slot />
 
 <footer>
-	<small>
-		Made with
+	<small> Made with
 		<a href="https://kit.svelte.dev">SvelteKit</a>,
 		<a href="https://prisma.io">Prisma</a> &
 		<a href="https://matcha.mizu.sh">matcha.css</a>

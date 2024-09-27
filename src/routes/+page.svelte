@@ -15,8 +15,7 @@
 		<h2>🔍Job Search Sites</h2>
 		<LinkButton address="https://jobindex.dk/jobsoegning" />
 		<LinkButton address="https://linkedin.com/jobs" />
-		<label
-			>🧑‍💻 Job Applicant
+		<label> 🧑‍💻 Job Applicant
 			<select id="userSelect">
 				{#each data.users as _}
 					<option value={_.id}>{_.name}</option>

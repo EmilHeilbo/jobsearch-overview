@@ -9,24 +9,19 @@
   🧑‍💻<!--dropdown selector here-->
 	<!-- Or maybe just use the currently selected user from +page -->
 	<form class="jobForm" method="dialog">
-		<label>
-			Job Title
+		<label> Job Title
 			<input name="title">
 		</label>
-		<label>
-			🏢 Company
+		<label> 🏢 Company
 			<input name="company">
 		</label>
-		<label>
-			📍 Location
+		<label> 📍 Location
 			<input name="location">
 		</label>
-		<label>
-			Hybrid
+		<label> 🏡 Hybrid
 			<input type="checkbox" name="isHybrid">
 		</label>
-		<label>
-			🚗 Distance
+		<label> 🚗 Distance
 			<small>In kilometers</small>
 			<input type="number" name="distance" disabled>
 		</label>
