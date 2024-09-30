@@ -6,7 +6,7 @@
 
 	function pluralize(count: number, word: string) {
 		if (count == 0) return null;
-		return `${count} ${(count > 1) ? word : `${word}s`}`;
+		return `${count} ${(count <= 1) ? word : `${word}s`}`;
 	}
 
 	const oneDay = 24 * 60 * 60 * 1000;
