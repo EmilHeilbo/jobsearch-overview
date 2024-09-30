@@ -25,7 +25,7 @@ Remember to configure your SQLite connection string in your local `.env` file.
 
 1. Ensure `prisma/seed.ts` exists and is configured correctly.
 
-2. `bunx prisma db push` – This generates an empty database with the defined schema
+2. `bun prisma db push` – This generates an empty database with the defined schema
 
 3. `bun prisma db seed` – This applies the seed data to your database
 

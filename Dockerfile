@@ -5,7 +5,8 @@ COPY ./package.json ./bun.lockb .
 RUN bun install --no-cache --frozen-lockfile --verbose
 
 COPY . .
-RUN bunx prisma generate
+RUN bun prisma db push
+RUN bun prisma db seed
 RUN bun run build
 
 EXPOSE 3000
