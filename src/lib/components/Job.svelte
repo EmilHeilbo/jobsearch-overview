@@ -1,13 +1,9 @@
 <script lang="ts">
 	// @ts-ignore
 	import type { PageData } from './$types';
+	import { pluralize } from '$lib/toolbox';
 
 	export let job: PageData;
-
-	function pluralize(count: number, word: string) {
-		if (count == 0) return null;
-		return `${count} ${(count <= 1) ? word : `${word}s`}`;
-	}
 
 	const oneDay = 24 * 60 * 60 * 1000;
 	const daysPassed = 
